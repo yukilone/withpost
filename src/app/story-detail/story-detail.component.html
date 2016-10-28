@@ -1,0 +1,33 @@
+<div class="mdl-grid mdl-grid--no-spacing" style="max-width:960px;margin:auto;">
+  <div class="mdl-cell mdl-cell--8-col">
+    <div class="mdl-grid">
+      <mdl-card class="mdl-cell mdl-cell--12-col" mdl-shadow="3">
+        <mdl-card-title mdl-card-border>
+          <h3 mdl-card-title-text>{{story?.title}}</h3>
+          <mdl-layout-spacer></mdl-layout-spacer> <img src="/assets/img/share1.png" style="width:80px;border-radius:3px;" alt="" mdl-shadow="3"> </mdl-card-title>
+        <div style="padding:16px;" [innerHTML]="safeHtml"></div>
+        <mdl-card-actions mdl-card-border> <button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button mdl-button-type="icon" mdl-ripple>
+            <mdl-icon>more_horiz</mdl-icon>
+          </button>
+          <mdl-menu #m1="mdlMenu" mdl-menu-position="top-left">
+            <mdl-menu-item mdl-ripple (click)="action()">Some Action</mdl-menu-item>
+            <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Another Action</mdl-menu-item>
+            <mdl-menu-item mdl-ripple disabled>Disabled Action</mdl-menu-item>
+            <mdl-menu-item>Yet Another Action</mdl-menu-item>
+          </mdl-menu> <button mdl-button mdl-colored mdl-ripple>READ MORE</button> <span mdl-badge="♥">Likes</span>
+          <mdl-chip mdl-label="1542"></mdl-chip> <span mdl-badge="♥">Viewed</span>
+          <mdl-chip mdl-label="75211"></mdl-chip>
+        </mdl-card-actions>
+      </mdl-card>
+    </div>
+  </div>
+  <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-grid">
+      <mdl-card class="mdl-cell mdl-cell--12-col" mdl-shadow="3">
+        <mdl-card-title>
+          <h3 mdl-card-title-text>{{story?.title}}</h3> </mdl-card-title>
+        <mdl-card-supporting-text mdl-card-expand [innerHTML]="safeHtml"></mdl-card-supporting-text>
+      </mdl-card>
+    </div>
+  </div>
+</div>

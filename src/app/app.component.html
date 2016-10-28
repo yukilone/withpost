@@ -1,3 +1,70 @@
-<h1>
-  {{title}}
-</h1>
+<dialog-outlet></dialog-outlet>
+<!-- Dialog Area -->
+<mdl-dialog #searchDialog [mdl-dialog-config]="{clickOutsideToClose: true, styles:{'width': '350px', 'border-color': 'darkgrey', 'border-radius': '3px'}, isModal:true}" (show)="onDialogShow(searchDialog)" (hide)="onDialogHide()">
+  <h3 class="mdl-dialog__title">SEARCH</h3>
+  <div class="mdl-dialog__content">
+    <mdl-textfield type="text" label="USERNAME" [(ngModel)]="username" autofocus floating-label></mdl-textfield>
+    <mdl-textfield type="password" label="PASSWORD" [(ngModel)]="pw" autofocus floating-label></mdl-textfield>
+  </div>
+  <div class="mdl-dialog__actions"> <button mdl-button (click)="saveUser();searchDialog.close()" mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Save</button> <button mdl-button (click)="searchDialog.close()" mdl-ripple>Cancel</button> </div>
+</mdl-dialog>
+<mdl-progress [progress]="progress.val" style="width:100%;position:absolute;z-index:4;"></mdl-progress>
+<div>
+  <mdl-layout #mdlLayout1 mdl-layout-fixed-header mdl-layout-mode="waterfall" class="mdl-layout--no-desktop-drawer-button">
+    <mdl-layout-header>
+      <mdl-layout-header-row>
+        <mdl-layout-title>
+          <h3>
+            {{title}}
+            <button mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple (click)="showSnackbar()">Show Snackbar</button>
+            <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="searchDialog.show()">Edit User Dialog</button>
+
+
+            <mdl-icon mdl-badge="77" mdl-badge-overlap>account_box</mdl-icon>
+
+
+            <!--
+            <mdl-icon mdl-badge="12" mdl-badge-overlap>assignment</mdl-icon>
+            <mdl-icon mdl-badge="3" mdl-badge-overlap>build</mdl-icon>
+            <mdl-icon mdl-badge="6" mdl-badge-overlap>dashboard</mdl-icon>
+            <mdl-icon mdl-badge="25" mdl-badge-overlap>settings_applications</mdl-icon>
+            <mdl-icon mdl-badge="25" mdl-badge-overlap>settings</mdl-icon>
+            <mdl-icon mdl-badge="92" mdl-badge-overlap>thumb_up</mdl-icon>
+            <mdl-icon mdl-badge="92" mdl-badge-overlap>thumb_down</mdl-icon>
+            <mdl-icon mdl-badge="18" mdl-badge-overlap>add_alert</mdl-icon>
+          -->
+
+          </h3> </mdl-layout-title>
+        <mdl-layout-spacer></mdl-layout-spacer>
+        <nav class="mdl-navigation mdl-layout--large-screen-only"> <a class="mdl-navigation__link" *ngFor="let menu of menus" routerLink="{{menu.linkUrl}}" routerLinkActive="active" fragment="top">{{menu.name}}</a> </nav> <button mdl-button mdl-colored="accent" mdl-button-type="raised" mdl-ripple>
+          <mdl-icon>search</mdl-icon>
+        </button> </mdl-layout-header-row>
+    </mdl-layout-header>
+    <mdl-layout-drawer>
+      <mdl-layout-title>{{title}}</mdl-layout-title>
+      <nav class="mdl-navigation mdl-layout--small-screen-only"> <a class="mdl-navigation__link" *ngFor="let menu of menus" routerLink="{{menu.linkUrl}}" routerLinkActive="active" (click)="mdlLayout1.toggleDrawer()">{{menu.name}}</a> </nav>
+    </mdl-layout-drawer>
+    <mdl-layout-content>
+      <div id="top"></div>
+      <router-outlet></router-outlet>
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo">
+            <mdl-icon>account_box</mdl-icon>
+            <mdl-icon>apps</mdl-icon>
+            <mdl-icon>perm_identity</mdl-icon>
+          </div>
+        </div>
+        <div class="mdl-mini-footer__right-section">
+          <div class="mdl-logo">WITHPOST 위드공감</div>
+          <ul class="mdl-mini-footer__link-list">
+            <li><a href="#">Recruiting</a></li>
+            <li><a href="#">Introduction</a></li>
+            <li><a href="#">Policy</a></li>
+            <li><a href="#">Privacy & Terms</a></li>
+          </ul>
+        </div>
+      </footer>
+    </mdl-layout-content>
+  </mdl-layout>
+</div>

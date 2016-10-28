@@ -1,0 +1,137 @@
+<div class="mdl-grid mdl-grid--no-spacing" style="max-width:960px;margin:auto;">
+  <!--
+    기본 컨텐츠 레이아웃.
+    ** 전체 가로 최대 사이즈 : max-width:960px;
+    ** 가운데 정렬 : margin:auto;
+    ** 이 div 를 grid 로 정의하고 여백을 없앰. : mld-grid mdl-grid--no-spacing
+  -->
+  <!-- ad Area -->
+  <div class="mdl-grid" style="width:100%;">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--hide-tablet mdl-cell--hide-phone"> <img src="/assets/img/ad_horiz_1.png" width="100%" alt=""> </div>
+    <!--
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--hide-tablet mdl-cell--hide-desktop">
+      <img src="/assets/img/ad_vert_1.png" width="100%" alt="">
+    </div>
+  --></div>
+  <div class="mdl-cell mdl-cell--8-col">
+    <div id="myCardGrid" class="mdl-grid">
+      <mdl-card class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet" mdl-shadow="3" *ngFor="let story of stories">
+        <mdl-card-media> <img src="{{story.imgUrl}}" width="100%" height="100%" alt="">
+          <!--
+          <iframe width="100%" height="" src="https://www.youtube.com/embed/4uiVsGu0Ovc" frameborder="0" allowfullscreen></iframe>
+          --></mdl-card-media>
+        <mdl-card-title (click)="goDetail(story)">
+          <h3 mdl-card-title-text>{{story.title}}</h3> </mdl-card-title>
+        <mdl-card-supporting-text mdl-card-expand (click)="goDetail(story)">{{story.content}}</mdl-card-supporting-text>
+        <mdl-card-actions mdl-card-border> <button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button mdl-button-type="icon" mdl-ripple>
+          <mdl-icon>more_horiz</mdl-icon>
+        </button>
+          <mdl-menu #m1="mdlMenu" mdl-menu-position="top-left">
+            <mdl-menu-item mdl-ripple (click)="action()">Some Action</mdl-menu-item>
+            <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Another Action</mdl-menu-item>
+            <mdl-menu-item mdl-ripple disabled>Disabled Action</mdl-menu-item>
+            <mdl-menu-item>Yet Another Action</mdl-menu-item>
+          </mdl-menu>
+          <!--
+        <button mdl-button mdl-colored mdl-ripple>READ MORE</button>
+        --></mdl-card-actions>
+        <mdl-card-menu> <button mdl-button mdl-button-type="mini-fab" mdl-ripple style="opacity:0.9;">
+            <mdl-icon style="color:white;">share</mdl-icon>
+          </button> </mdl-card-menu>
+      </mdl-card>
+      <div class="mdl-cell mdl-cell--12-col">
+        <hr> <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple style="width:100%;" (click)="getStories()">
+          이전 스토리 불러오기 <mdl-icon>library_add</mdl-icon>
+        </button> </div>
+    </div>
+  </div>
+  <!-- 오른쪽 사이드 영역 -->
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
+    <div class="mdl-grid">
+      <!-- ad Area -->
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--hide-tablet mdl-cell--hide-desktop"> <img src="/assets/img/ad_vert_1.png" width="100%" alt=""> </div>
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--hide-phone mdl-cell--hide-desktop"> <img src="/assets/img/ad_horiz_1.png" width="100%" alt=""> </div>
+      <mdl-card class="mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet">
+        <mdl-card-title>
+          <h3 mdl-card-title-text>최근 급상승 스토리</h3> </mdl-card-title>
+        <mdl-card-supporting-text>
+          <div class="new-hot">
+            <a href="#">
+              <mdl-icon>fiber_new</mdl-icon>
+            </a> 세상에서 가장 용감한 고양이 “나 아니었으면 큰일날 뻔” </div>
+          <div class="new-hot">
+            <a href="#">
+              <mdl-icon>fiber_new</mdl-icon>
+            </a> 구닥다리 손님방이 스터디룸으로 변신! 기발하고 간편한 셀프 인테리어. </div>
+          <div class="new-hot">
+            <a href="#">
+              <mdl-icon>fiber_new</mdl-icon>
+            </a> 인류의 포악함을 보여주는 25개의 눈망울. 특히 13번에서 눈을 뗄 수 없다. </div>
+          <div class="new-hot">
+            <a href="#">
+              <mdl-icon>fiber_new</mdl-icon>
+            </a> 성형수술에 9천만원을 썼지만… “당신의 진짜 소원은 뭐죠?” </div>
+        </mdl-card-supporting-text>
+        <mdl-card-actions mdl-card-border> <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple style="font-size:12px;" #btn1="mdlButton" (click)="m1.toggle($event, btn1)">
+            READ MORE <mdl-icon>chevron_right</mdl-icon>
+        </button>
+          <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right">
+            <mdl-menu-item mdl-ripple (click)="action()">Some Action</mdl-menu-item>
+            <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Another Action</mdl-menu-item>
+            <mdl-menu-item mdl-ripple disabled>Disabled Action</mdl-menu-item>
+            <mdl-menu-item>Yet Another Action</mdl-menu-item>
+          </mdl-menu>
+          <!--
+        <button mdl-button mdl-colored mdl-ripple>READ MORE</button>
+        --></mdl-card-actions>
+      </mdl-card>
+      <mdl-card class="mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet">
+        <mdl-card-title>
+          <h3 mdl-card-title-text>최근 댓글 반응</h3> </mdl-card-title>
+        <mdl-card-supporting-text>
+          <mdl-list>
+            <mdl-list-item lines="3" mdl-ripple>
+              <mdl-list-item-primary-content>
+                <mdl-icon mdl-list-item-icon>person</mdl-icon> <span>Bryan Cranston</span>
+                <mdl-list-item-text-body> Bryan Cranston played the role of Walter in Breaking Bad. He is also known for playing Hal in Malcom in the Middle. </mdl-list-item-text-body>
+              </mdl-list-item-primary-content>
+              <mdl-list-item-secondary-content>
+                <a href="#">
+                  <mdl-icon>star</mdl-icon>
+                </a>
+              </mdl-list-item-secondary-content>
+            </mdl-list-item>
+            <mdl-list-item lines="3" mdl-ripple>
+              <mdl-list-item-primary-content>
+                <mdl-icon mdl-list-item-icon>person</mdl-icon> <span>Aaron Paul</span>
+                <mdl-list-item-text-body> Aaron Paul played the role of Jesse in Breaking Bad. He also featured in the "Need For Speed" Movie. </mdl-list-item-text-body>
+              </mdl-list-item-primary-content>
+              <mdl-list-item-secondary-content>
+                <a href="#">
+                  <mdl-icon>star</mdl-icon>
+                </a>
+              </mdl-list-item-secondary-content>
+            </mdl-list-item>
+            <mdl-list-item lines="3" mdl-ripple>
+              <mdl-list-item-primary-content>
+                <mdl-icon mdl-list-item-icon>person</mdl-icon> <span>Aaron Paul</span>
+                <mdl-list-item-text-body> Aaron Paul played the role of Jesse in Breaking Bad. He also featured in the "Need For Speed" Movie. </mdl-list-item-text-body>
+              </mdl-list-item-primary-content>
+              <mdl-list-item-secondary-content>
+                <a href="#">
+                  <mdl-icon>star</mdl-icon>
+                </a>
+              </mdl-list-item-secondary-content>
+            </mdl-list-item>
+          </mdl-list>
+        </mdl-card-supporting-text>
+      </mdl-card>
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--hide-tablet mdl-cell--hide-phone"> <img src="/assets/img/ad_vert_1.png" width="100%" alt=""> </div>
+      <mdl-card class="mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet">
+        <mdl-card-title>
+          <h3 mdl-card-title-text>설문조사 참여하기</h3> </mdl-card-title>
+        <mdl-table-selectable [table-model]="tableModel" [table-model-selected]="selected" (table-model-selectionChanged)="selectionChanged($event)"> </mdl-table-selectable>
+      </mdl-card>
+    </div>
+  </div>
+</div>
