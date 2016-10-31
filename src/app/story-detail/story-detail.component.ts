@@ -66,7 +66,6 @@ export class StoryDetailComponent implements OnInit, AfterContentInit {
     this.progressService.getProgress().val = 0;
     const int = setInterval(() => {
       if (this.progressService.getProgress().val >= 100) {
-        console.log(this.progressService.getProgress());
         clearInterval(int);
       }
       else this.progressService.getProgress().val += 20;

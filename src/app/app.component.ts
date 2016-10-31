@@ -15,7 +15,7 @@ import { Menu } from "./menu";
 })
 export class AppComponent implements OnInit, AfterContentInit {
   title = 'WithGG';
-  toastMsg = "My First Toast Message";
+
   progress: { val: number };
   username: string;
   pw: string;
@@ -42,7 +42,6 @@ export class AppComponent implements OnInit, AfterContentInit {
   ngAfterContentInit() {
     const int = setInterval(() => {
       if (this.progress.val >= 100) {
-        console.log(this.progressService.getProgress());
         clearInterval(int);
       }
       else this.progress.val += 20;
@@ -53,7 +52,7 @@ export class AppComponent implements OnInit, AfterContentInit {
   showSnackbar() {
 
     this.mdlSnackbarService.showSnackbar({
-      message: this.toastMsg,
+      message: "My First Toast Message",
       action: {
         handler: () => {
           this.mdlSnackbarService.showToast('You hit the ok Button');
@@ -61,6 +60,7 @@ export class AppComponent implements OnInit, AfterContentInit {
         text: 'OK'
       }
     });
+
   }
 
   onDialogShow(dialogRef) {

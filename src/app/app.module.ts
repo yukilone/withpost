@@ -15,7 +15,8 @@ import { InMemoryWebApiModule } from "angular-in-memory-web-api/in-memory-web-ap
 import { WithInMemoryDataService }  from './with-in-memory-data.service';
 import "./rxjs-ext";
 
-import { StoryDetailResolver } from "./story-detail/story-detail.resolver.service";
+import { StoryDetailResolver } from "./story-detail/story-detail-resolver.service";
+import { ContentMainResolver } from "./content-main/content-main-resolver.service";
 
 import { AppProgressService } from "./app.progress.service";
 
@@ -39,7 +40,13 @@ import { AppProgressService } from "./app.progress.service";
           story: StoryDetailResolver
         }
       },
-      { path: '', component: ContentMainComponent },
+      {
+        path: '',
+        component: ContentMainComponent,
+        resolve: {
+          stories: ContentMainResolver
+        }
+      },
       { path: '**', redirectTo: "/", pathMatch: "full" }
     ]),
 
@@ -47,7 +54,7 @@ import { AppProgressService } from "./app.progress.service";
   ],
   providers: [
     StoryService, AppProgressService,
-    StoryDetailResolver
+    StoryDetailResolver, ContentMainResolver
   ],
   bootstrap: [AppComponent]
 })

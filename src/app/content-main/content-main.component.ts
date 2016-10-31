@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd, NavigationExtras } from "@angular/router";
+import { Component, OnInit,
+  trigger,
+  state,
+  style,
+  transition,
+  animate } from '@angular/core';
+import { Router, ActivatedRoute, NavigationEnd, NavigationExtras } from "@angular/router";
 
 import { MdlDefaultTableModel } from "angular2-mdl";
 
@@ -20,11 +25,20 @@ class ITableItem {
 
 
 
-
 @Component({
   selector: 'app-content-main',
   templateUrl: './content-main.component.html',
-  styleUrls: ['./content-main.component.css']
+  styleUrls: ['./content-main.component.css'],
+  /*
+  animations: [ // view 에 다음 코드 붙일 것 => [@showIn]="story.state" (@showIn.start)="animationStarted(story)"
+    trigger('showIn', [
+      state('inactive', style({ opacity: 0 })),
+      state('active', style({ opacity: 1 })),
+      transition('inactive => active', animate('300ms ease-in')),
+      transition('active => inactive', animate('300ms ease-out'))
+    ])
+  ]
+  */
 })
 export class ContentMainComponent implements OnInit {
   stories: Story[];
@@ -53,13 +67,18 @@ export class ContentMainComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private storyService: StoryService) { }
 
   ngOnInit() {
 
 
 
-    this.getStories();
+    // this.getStories();
+    this.route.data.forEach((data: { stories: Story[] }) => {
+      this.stories = data.stories;
+    });
+
     this.tableModel.addAll(this.tableData);
     this.selected = this.tableData.filter(data => data.selected);
 
@@ -118,5 +137,15 @@ export class ContentMainComponent implements OnInit {
 
     this.router.navigate(link);
   }
+
+
+  /*
+  animationStarted(story) {
+    let delay = Math.random();
+    delay = +delay.toFixed(2) * 500;
+    setTimeout(() => story.state = "active", delay);
+
+  }
+  */
 
 }

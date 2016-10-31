@@ -1,6 +1,10 @@
 #myCardGrid mdl-card:hover {opacity: 0.8;}
 #myCardGrid mdl-card-supporting-text:hover,
 #myCardGrid mdl-card-title:hover {cursor: pointer;}
+
+#imgGrid img:hover {opacity:0.6;}
+#imgGrid div.mdl-cell {width:33.33333333%!important;}
+
 mdl-card-supporting-text {color:rgba(0,0,0,.87);}
 
 mdl-list .mdl-button__ripple-container {border-radius:7px;}
@@ -10,7 +14,7 @@ mdl-list-item-primary-content mdl-list-item-text-body {font-size:13px;}
 
 div.new-hot {
     font-weight:600;
-    font-size:13px;
+    font-size:12px;
     padding:3px;
     white-space: nowrap;
     width:95%;
@@ -20,5 +24,7 @@ div.new-hot {
 }
 
 div.new-hot:hover {
-  background-color:#f9f9f9;
+  background-color:#f0f0f0;
+  /* text-decoration: underline; */
+  cursor:pointer;
 }

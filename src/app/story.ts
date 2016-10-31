@@ -1,4 +1,5 @@
 export class Story {
+  state: string;
   id: number;
   title: string;
   desc: string;

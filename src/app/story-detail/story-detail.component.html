@@ -1,4 +1,15 @@
 <div class="mdl-grid mdl-grid--no-spacing" style="max-width:960px;margin:auto;">
+    <!-- ad Area -->
+  <div class="mdl-grid" style="width:100%;">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+      <img src="/assets/img/ad_horiz_1.png" width="100%" alt="">
+    </div>
+    <!--
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--hide-tablet mdl-cell--hide-desktop">
+      <img src="/assets/img/ad_vert_1.png" width="100%" alt="">
+    </div>
+  -->
+  </div>
   <div class="mdl-cell mdl-cell--8-col">
     <div class="mdl-grid">
       <mdl-card class="mdl-cell mdl-cell--12-col" mdl-shadow="3">
@@ -23,11 +34,133 @@
   </div>
   <div class="mdl-cell mdl-cell--4-col">
     <div class="mdl-grid">
-      <mdl-card class="mdl-cell mdl-cell--12-col" mdl-shadow="3">
+      <mdl-card class="mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet" mdl-shadow="3">
+
         <mdl-card-title>
-          <h3 mdl-card-title-text>{{story?.title}}</h3> </mdl-card-title>
-        <mdl-card-supporting-text mdl-card-expand [innerHTML]="safeHtml"></mdl-card-supporting-text>
+          <h3 mdl-card-title-text>관련된 인기 스토리</h3>
+        </mdl-card-title>
+        <mdl-card-supporting-text mdl-card-expand>
+          <div class="new-hot">
+            세상에서 가장 용감한 고양이 “나 아니었으면 큰일날 뻔”
+          </div>
+          <div class="new-hot">
+            인류의 포악함을 보여주는 25개의 눈망울. 특히 13번에서 눈을 뗄 수 없다.
+          </div>
+          <div class="new-hot">
+            구닥다리 손님방이 스터디룸으로 변신! 기발하고 간편한 셀프 인테리어.
+          </div>
+          <div class="new-hot">
+            인류의 포악함을 보여주는 25개의 눈망울. 특히 13번에서 눈을 뗄 수 없다.
+          </div>
+          <div class="new-hot">
+            성형수술에 9천만원을 썼지만… “당신의 진짜 소원은 뭐죠?”
+          </div>
+          <div class="new-hot">
+            세상에서 가장 용감한 고양이 “나 아니었으면 큰일날 뻔”
+          </div>
+        </mdl-card-supporting-text>
+        <mdl-card-actions mdl-card-border>
+          <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple style="font-size:12px;" #btn1="mdlButton" (click)="m1.toggle($event, btn1)">
+            READ MORE
+            <mdl-icon>chevron_right</mdl-icon>
+          </button>
+          <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right">
+            <mdl-menu-item mdl-ripple (click)="action()">Some Action</mdl-menu-item>
+            <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Another Action</mdl-menu-item>
+            <mdl-menu-item mdl-ripple disabled>Disabled Action</mdl-menu-item>
+            <mdl-menu-item>Yet Another Action</mdl-menu-item>
+          </mdl-menu>
+          <!--
+        <button mdl-button mdl-colored mdl-ripple>READ MORE</button>
+        -->
+        </mdl-card-actions>
+
       </mdl-card>
+
+
+      <!-- ad Area -->
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+        <img src="/assets/img/ad_vert_1.png" width="100%" alt="">
+      </div>
+
+
+
+
+
+        <mdl-card class="mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet" mdl-shadow="3">
+          <mdl-card-title>
+            <h3 mdl-card-title-text>사진으로 모아보기</h3>
+          </mdl-card-title>
+            <div id="imgGrid" class="mdl-grid mdl-grid--no-spacing">
+              <div class="mdl-cell">
+                <img src="/assets/img/1.jpg" width="100%" height="100%" alt="">
+              </div>
+              <div class="mdl-cell"><img src="/assets/img/2.jpg" width="100%" height="100%" alt=""></div>
+              <div class="mdl-cell"><img src="/assets/img/3.jpg" width="100%" height="100%" alt=""></div>
+              <div class="mdl-cell"><img src="/assets/img/4.jpg" width="100%" height="100%" alt=""></div>
+              <div class="mdl-cell"><img src="/assets/img/5.jpg" width="100%" height="100%" alt=""></div>
+              <div class="mdl-cell"><img src="/assets/img/6.jpg" width="100%" height="100%" alt=""></div>
+              <div class="mdl-cell"><img src="/assets/img/1.jpg" width="100%" height="100%" alt=""></div>
+              <div class="mdl-cell"><img src="/assets/img/2.jpg" width="100%" height="100%" alt=""></div>
+              <div class="mdl-cell">
+                <img src="/assets/img/share1.png" width="100%" height="100%" alt="">
+              </div>
+            </div>
+
+        </mdl-card>
+
+
+
+      <mdl-card class="mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet" mdl-shadow="3">
+
+        <mdl-card-title>
+          <h3 mdl-card-title-text>진행중 이벤트!</h3>
+        </mdl-card-title>
+        <mdl-card-supporting-text mdl-card-expand>
+
+          <div class="new-hot">
+            인류의 포악함을 보여주는 25개의 눈망울. 특히 13번에서 눈을 뗄 수 없다.
+          </div>
+          <div class="new-hot">
+            구닥다리 손님방이 스터디룸으로 변신! 기발하고 간편한 셀프 인테리어.
+          </div>
+          <div class="new-hot">
+            인류의 포악함을 보여주는 25개의 눈망울. 특히 13번에서 눈을 뗄 수 없다.
+          </div>
+          <div class="new-hot">
+            성형수술에 9천만원을 썼지만… “당신의 진짜 소원은 뭐죠?”
+          </div>
+          <div class="new-hot">
+            세상에서 가장 용감한 고양이 “나 아니었으면 큰일날 뻔”
+          </div>
+          <div class="new-hot" [mdl-tooltip-large]="xml" mdl-tooltip-position="bottom">
+            세상에서 가장 용감한 고양이 “나 아니었으면 큰일날 뻔”
+            <mdl-tooltip #xml="mdlTooltip">
+              <img src="/assets/img/1.jpg" width="50" height="50"> 아이폰 7S!
+            </mdl-tooltip>
+          </div>
+        </mdl-card-supporting-text>
+        <mdl-card-actions mdl-card-border>
+          <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple style="font-size:12px;" #btn1="mdlButton" (click)="m1.toggle($event, btn1)">
+            READ MORE
+            <mdl-icon>chevron_right</mdl-icon>
+          </button>
+          <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right">
+            <mdl-menu-item mdl-ripple (click)="action()">Some Action</mdl-menu-item>
+            <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Another Action</mdl-menu-item>
+            <mdl-menu-item mdl-ripple disabled>Disabled Action</mdl-menu-item>
+            <mdl-menu-item>Yet Another Action</mdl-menu-item>
+          </mdl-menu>
+          <!--
+        <button mdl-button mdl-colored mdl-ripple>READ MORE</button>
+        -->
+        </mdl-card-actions>
+
+      </mdl-card>
+
+
+
+
     </div>
   </div>
 </div>

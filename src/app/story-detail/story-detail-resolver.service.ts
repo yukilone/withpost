@@ -7,10 +7,13 @@ import { Story } from '../story';
 import { StoryService } from '../story.service';
 
 
+
 @Injectable()
 export class StoryDetailResolver implements Resolve<Story> {
 
-  constructor(private storyService: StoryService, private router: Router) { }
+  constructor(
+    private storyService: StoryService,
+    private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Story> {
     let id = +route.params['id'];

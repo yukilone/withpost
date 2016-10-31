@@ -1,13 +1,69 @@
-<dialog-outlet></dialog-outlet>
+
 <!-- Dialog Area -->
-<mdl-dialog #searchDialog [mdl-dialog-config]="{clickOutsideToClose: true, styles:{'width': '350px', 'border-color': 'darkgrey', 'border-radius': '3px'}, isModal:true}" (show)="onDialogShow(searchDialog)" (hide)="onDialogHide()">
+
+<mdl-dialog #searchDialog [mdl-dialog-config]="{
+    clickOutsideToClose: false,
+    styles:{'width': '250px', 'border-radius': '3px', 'background-color':'#555555', 'color': 'white'},
+    isModal:true
+  }" (show)="onDialogShow(searchDialog)" (hide)="onDialogHide()">
+<!--
+  <div class="mdl-grid mdl-grid--no-spacing">
+    <mdl-card id="attentionDialog" class="mdl-cell mdl-cell--12-col" style="height:150px;background-color:#666666;">
+      <mdl-card-title>
+        매일매일 새로운 스토리!
+      </mdl-card-title>
+      <mdl-card-supporting-text>
+        이벤트와 놀라운 경품혜택<br>전세계 핫이슈까지 한가득!
+      </mdl-card-supporting-text>
+      <mdl-card-actions mdl-card-border>
+        <button mdl-button (click)="saveUser();searchDialog.close()" mdl-button-type="raised" mdl-colored="accent" mdl-ripple>좋아요!</button>
+      </mdl-card-actions>
+      <mdl-card-menu>
+        <button mdl-button mdl-button-type="icon" mdl-ripple>
+          <mdl-icon>cancel</mdl-icon>
+        </button>
+      </mdl-card-menu>
+
+    </mdl-card>
+  </div>
+-->
+
+  <h3 class="mdl-dialog__title" style="padding:0;font-size:20px;font-weight:700;">
+    매일매일 새로운 스토리!
+  </h3>
+  <div class="mdl-dialog__content" style="font-size:12px;color:white;">
+    이벤트와 놀라운 경품혜택<br>전세계 핫이슈까지 한가득!
+  </div>
+  <div class="mdl-dialog__actions" style="padding:0;">
+    <button mdl-button (click)="saveUser();searchDialog.close()" mdl-button-type="raised" mdl-colored="accent" mdl-ripple>좋아요!</button>
+    <button mdl-button (click)="searchDialog.close()" mdl-ripple>닫기</button>
+  </div>
+
+
+</mdl-dialog>
+
+
+<!--
+<mdl-dialog #searchDialog [mdl-dialog-config]="{
+    clickOutsideToClose: false,
+    styles:{'width': '300px', 'border-radius': '4px'},
+    isModal:true
+  }" (show)="onDialogShow(searchDialog)" (hide)="onDialogHide()">
   <h3 class="mdl-dialog__title">SEARCH</h3>
   <div class="mdl-dialog__content">
     <mdl-textfield type="text" label="USERNAME" [(ngModel)]="username" autofocus floating-label></mdl-textfield>
     <mdl-textfield type="password" label="PASSWORD" [(ngModel)]="pw" autofocus floating-label></mdl-textfield>
   </div>
-  <div class="mdl-dialog__actions"> <button mdl-button (click)="saveUser();searchDialog.close()" mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Save</button> <button mdl-button (click)="searchDialog.close()" mdl-ripple>Cancel</button> </div>
+  <div class="mdl-dialog__actions">
+    <button mdl-button (click)="saveUser();searchDialog.close()" mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Save</button>
+    <button mdl-button (click)="searchDialog.close()" mdl-ripple>Cancel</button>
+  </div>
 </mdl-dialog>
+-->
+
+<!--
+  main view Start!
+-->
 <mdl-progress [progress]="progress.val" style="width:100%;position:absolute;z-index:4;"></mdl-progress>
 <div>
   <mdl-layout #mdlLayout1 mdl-layout-fixed-header mdl-layout-mode="waterfall" class="mdl-layout--no-desktop-drawer-button">
@@ -47,7 +103,7 @@
     <mdl-layout-content>
       <div id="top"></div>
       <router-outlet></router-outlet>
-      <footer class="mdl-mini-footer">
+      <footer id="footer" class="mdl-mini-footer">
         <div class="mdl-mini-footer__left-section">
           <div class="mdl-logo">
             <mdl-icon>account_box</mdl-icon>

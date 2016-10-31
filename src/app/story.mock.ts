@@ -1,14 +1,14 @@
 import { Story } from "./story";
 
 export const STORIES: Story[] = [
-  { id: 1, title: "파리는 도대체 어떤 곳이길래?", desc: "Someone famous in Source Title", content: "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.", imgUrl: "/assets/img/1.jpg" },
-  { id: 2, title: "뉴욕에 가본 사람들", desc: "Someone famous in Source Title", content: "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.", imgUrl: "/assets/img/2.jpg" },
-  { id: 3, title: "샌프란시스코와 러시앤캐치", desc: "Someone famous in Source Title", content: "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.", imgUrl: "/assets/img/3.jpg" },
-  { id: 4, title: "이 음식은 무엇일까", desc: "Someone famous in Source Title", content: "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.", imgUrl: "/assets/img/4.jpg" },
-  { id: 5, title: "맛있는 요리 레시피 1탄", desc: "Someone famous in Source Title", content: "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.", imgUrl: "/assets/img/5.jpg" },
-  { id: 6, title: "맛있는 요리 레시피 2탄", desc: "Someone famous in Source Title", content: "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.", imgUrl: "/assets/img/6.jpg" },
+  { id: 1, state: "inactive", title: "파리는 도대체 어떤 곳이길래?", desc: "Someone famous in Source Title", content: "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.", imgUrl: "/assets/img/1.jpg" },
+  { id: 2, state: "inactive", title: "뉴욕에 가본 사람들", desc: "Someone famous in Source Title", content: "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.", imgUrl: "/assets/img/2.jpg" },
+  { id: 3, state: "inactive", title: "샌프란시스코와 러시앤캐치", desc: "Someone famous in Source Title", content: "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.", imgUrl: "/assets/img/3.jpg" },
+  { id: 4, state: "inactive", title: "이 음식은 무엇일까", desc: "Someone famous in Source Title", content: "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.", imgUrl: "/assets/img/4.jpg" },
+  { id: 5, state: "inactive", title: "맛있는 요리 레시피 1탄", desc: "Someone famous in Source Title", content: "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.", imgUrl: "/assets/img/5.jpg" },
+  { id: 6, state: "inactive", title: "맛있는 요리 레시피 2탄", desc: "Someone famous in Source Title", content: "Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.", imgUrl: "/assets/img/6.jpg" },
   {
-    id: 7, title: "맛있는 요리 레시피 3탄", desc: "Someone famous in Source Title", content: `<p>
+    id: 7, state: "inactive", title: "맛있는 요리 레시피 3탄", desc: "Someone famous in Source Title", content: `<p>
     매운 맛 하면 한국인의 미각(그리고 불닭**면)이 바로 떠오르겠지만 사실 한국인만 매운 음식을 잘 먹는 것은 아니다. 특히 몇 년 전부터 영국에서 유행처럼 번지기 시작한 ‘고추 먹기 대회(Chilli Eating Contest)’에 참가한 사람들을 보고 있노라면, 영국 사람들이 이렇게 매운 것을 잘 먹었나 싶을 정도다.<br>
     다음의 사진들은 작년 9월 영국 남서부에 위치한 작은 도시 배스(Bath)에서 열렸던 고추 먹기 대회의 주요 장면들이다. 영국에서 가장 ‘핫한’ 축제로 알려져 있는 배스 칠리 축제(Bath Chilli Festival)의 프로그램 중 하나인 이 대회는 총 16 라운드에 걸쳐 조금씩 점점 매운 고추를 먹는 방식으로 진행되고, 마지막까지 남아서 가장 매운 고추를 먹는 사람이 승자가 된다.<br><br>
     <iframe width="100%" height="420" src="https://www.youtube.com/embed/EBwqbqZ3L60" frameborder="0" allowfullscreen></iframe>
@@ -30,7 +30,7 @@ export const STORIES: Story[] = [
   </p>		`, imgUrl: "/assets/img/6.jpg"
   },
   {
-    id: 8, title: "맛있는 요리 레시피 3탄", desc: "Someone famous in Source Title", content: `<h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Introduction</h3>
+    id: 8, state: "inactive", title: "맛있는 요리 레시피 3탄", desc: "Someone famous in Source Title", content: `<h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Introduction</h3>
   <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding ">
       <p>
           Excepteur reprehenderit sint exercitation ipsum consequat qui sit id velit elit. Velit anim eiusmod labore sit amet. Voluptate voluptate irure occaecat deserunt incididunt esse in. Sunt velit aliquip sunt elit ex nulla reprehenderit qui ut eiusmod ipsum do. Duis veniam reprehenderit laborum occaecat id proident nulla veniam. Duis enim deserunt voluptate aute veniam sint pariatur exercitation. Irure mollit est sit labore est deserunt pariatur duis aute laboris cupidatat. Consectetur consequat esse est sit veniam adipisicing ipsum enim irure.
