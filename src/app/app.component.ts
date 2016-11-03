@@ -1,6 +1,6 @@
 import { Component, ViewContainerRef, OnInit, AfterContentInit } from '@angular/core';
 import { MdlSnackbarService } from "angular2-mdl";
-
+import { URLSearchParams } from '@angular/http';
 import { AppProgressService } from "./app.progress.service";
 import { MenuService } from "./menu.service";
 import { Menu } from "./menu";
@@ -14,8 +14,8 @@ import { Menu } from "./menu";
   providers: [MenuService]
 })
 export class AppComponent implements OnInit, AfterContentInit {
-  title = 'WithGG';
 
+  title = 'WithGG';
   progress: { val: number };
   username: string;
   pw: string;

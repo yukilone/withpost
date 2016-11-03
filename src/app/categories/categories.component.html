@@ -1,0 +1,52 @@
+<div class="mdl-grid mdl-grid--no-spacing" style="max-width:960px;margin:auto;">
+  <!--
+    기본 컨텐츠 레이아웃.
+    ** 전체 가로 최대 사이즈 : max-width:960px;
+    ** 가운데 정렬 : margin:auto;
+    ** 이 div 를 grid 로 정의하고 여백을 없앰. : mld-grid mdl-grid--no-spacing
+  -->
+
+
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
+    <div class="mdl-grid">
+      <mdl-card class="mdl-cell mdl-cell--12-col" mdl-shadow="3">
+        <mdl-card-title>
+          <h3 mdl-card-title-text>카테고리 추가</h3>
+        </mdl-card-title>
+        <mdl-card-supporting-text mdl-card-expand>
+            <mdl-textfield type="text" label="Name" [(ngModel)]="name" floating-label></mdl-textfield>
+            <mdl-textfield type="text" label="Description" [(ngModel)]="desc" floating-label></mdl-textfield>
+        </mdl-card-supporting-text>
+        <mdl-card-actions mdl-card-border>
+          <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="addCategory()">
+            add
+          </button>
+        </mdl-card-actions>
+      </mdl-card>
+    </div>
+  </div>
+
+
+
+  <div class="mdl-cell mdl-cell--8-col">
+    <div id="myCardGrid" class="mdl-grid">
+      <mdl-card class="mdl-cell" mdl-shadow="3" *ngFor="let cate of categories">
+        <mdl-card-title>
+          <h3 mdl-card-title-text>{{cate.name}}</h3>
+        </mdl-card-title>
+        <mdl-card-supporting-text mdl-card-expand>{{cate.desc}}</mdl-card-supporting-text>
+        <mdl-card-actions mdl-card-border>
+          <button mdl-button mdl-button-type="icon" mdl-colored="accent" mdl-ripple>
+            <mdl-icon>delete_forever</mdl-icon>
+          </button>
+        </mdl-card-actions>
+      </mdl-card>
+    </div>
+  </div>
+
+
+
+
+
+
+</div>

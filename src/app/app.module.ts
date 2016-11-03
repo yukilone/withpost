@@ -19,13 +19,15 @@ import { StoryDetailResolver } from "./story-detail/story-detail-resolver.servic
 import { ContentMainResolver } from "./content-main/content-main-resolver.service";
 
 import { AppProgressService } from "./app.progress.service";
+import { CategoriesComponent } from './categories/categories.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentMainComponent,
-    StoryDetailComponent
+    StoryDetailComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,10 @@ import { AppProgressService } from "./app.progress.service";
         resolve: {
           story: StoryDetailResolver
         }
+      },
+      {
+        path: "category",
+        component: CategoriesComponent
       },
       {
         path: '',
