@@ -10,8 +10,7 @@ import { CATEGORIES } from "./category.mock";
 
 @Injectable()
 export class CategoryService {
-  private hostname = "shielded-tundra-34159.herokuapp.com";
-  private categoriesUrl = "categories";
+  private categoriesUrl = "https://shielded-tundra-34159.herokuapp.com/categories";
   constructor(private http: Http) { }
 
 
@@ -20,25 +19,39 @@ export class CategoryService {
   }
 
   getCategories(): Observable<Category[]> {
-    return this.http.get("shielded-tundra-34159.herokuapp.com/categories")
+    return this.http.get(this.categoriesUrl)
       .map(this.getData)
       .catch(this.handleErr);
   }
 
-  add(newCate: { name: string, desc: string }): Observable<Category> {
+  add(newCate: Category): Observable<Category> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post(this.hostname + "/" + this.categoriesUrl, newCate, options)
+    delete newCate._id;
+    return this.http.post(this.categoriesUrl, newCate, options)
       .map(this.getData)
       .catch(this.handleErr);
   }
 
+  edit(editCate: Category): Observable<Category> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.put(this.categoriesUrl + `/${editCate._id}`, editCate, options)
+      .catch(this.handleErr);
+  }
+
+  delete(_id: any): Observable<Category> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.delete(this.categoriesUrl + `/${_id}`, options)
+      .catch(this.handleErr);
+  }
 
 
 
   private getData(res: Response) {
-    let body = res.json();
-    return body.data || {};
+    let data = res.json();
+    return data || {};
   }
 
 

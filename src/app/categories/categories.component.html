@@ -9,20 +9,36 @@
 
   <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
     <div class="mdl-grid">
-      <mdl-card class="mdl-cell mdl-cell--12-col" mdl-shadow="3">
+      <mdl-card *ngIf="editData" class="mdl-cell mdl-cell--12-col" mdl-shadow="3">
         <mdl-card-title>
-          <h3 mdl-card-title-text>카테고리 추가</h3>
+          <h3 mdl-card-title-text>카테고리 수정</h3>
         </mdl-card-title>
         <mdl-card-supporting-text mdl-card-expand>
-            <mdl-textfield type="text" label="Name" [(ngModel)]="name" floating-label></mdl-textfield>
-            <mdl-textfield type="text" label="Description" [(ngModel)]="desc" floating-label></mdl-textfield>
+            <mdl-textfield type="text" label="Name" [(ngModel)]="editData.name" floating-label></mdl-textfield>
+            <mdl-textfield type="text" label="Description" [(ngModel)]="editData.desc" floating-label></mdl-textfield>
         </mdl-card-supporting-text>
         <mdl-card-actions mdl-card-border>
-          <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="addCategory()">
-            add
+          <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="editCategory()">
+            edit
           </button>
         </mdl-card-actions>
       </mdl-card>
+      <mdl-card class="mdl-cell mdl-cell--12-col" mdl-shadow="3" style="min-height:initial">
+        <mdl-card-title *ngIf="formData">
+          <h3 mdl-card-title-text>카테고리 추가</h3>
+        </mdl-card-title>
+        <mdl-card-supporting-text *ngIf="formData" >
+            <mdl-textfield type="text" label="Name" [(ngModel)]="formData.name" floating-label></mdl-textfield>
+            <mdl-textfield type="text" label="Description" [(ngModel)]="formData.desc" floating-label></mdl-textfield>
+        </mdl-card-supporting-text>
+        <mdl-card-actions mdl-card-border>
+          <button mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple (click)="addCategory()">
+            add
+          </button>
+        </mdl-card-actions>
+
+      </mdl-card>
+
     </div>
   </div>
 
@@ -30,14 +46,15 @@
 
   <div class="mdl-cell mdl-cell--8-col">
     <div id="myCardGrid" class="mdl-grid">
-      <mdl-card class="mdl-cell" mdl-shadow="3" *ngFor="let cate of categories">
+      <mdl-card class="mdl-cell" mdl-shadow="3" *ngFor="let cate of categories"
+        [class.selected]="cate === editData" (click)="editData = cate">
         <mdl-card-title>
           <h3 mdl-card-title-text>{{cate.name}}</h3>
         </mdl-card-title>
         <mdl-card-supporting-text mdl-card-expand>{{cate.desc}}</mdl-card-supporting-text>
         <mdl-card-actions mdl-card-border>
-          <button mdl-button mdl-button-type="icon" mdl-colored="accent" mdl-ripple>
-            <mdl-icon>delete_forever</mdl-icon>
+          <button mdl-button mdl-colored="accent" mdl-ripple (click)="deleteCategory(cate._id)">
+            delete
           </button>
         </mdl-card-actions>
       </mdl-card>

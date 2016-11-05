@@ -1,0 +1,7 @@
+
+#myCardGrid mdl-card:hover {background-color: #f0f0f0 !important;}
+#myCardGrid mdl-card.selected {
+  background-color: #f0f0f0 !important;
+  left: 2px;
+  top: -2px;
+}

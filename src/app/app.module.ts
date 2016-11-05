@@ -33,7 +33,7 @@ import { CategoriesComponent } from './categories/categories.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(WithInMemoryDataService),
+    //InMemoryWebApiModule.forRoot(WithInMemoryDataService),
     RouterModule.forRoot([
       {
         path: 'detail/:id',
